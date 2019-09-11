@@ -4,6 +4,8 @@
 ### Fall '19
 ##### Final grade: 
 
+[Continued from CIS 83](https://laughtrey.github.io/cis83/)
+
 ## Projects
 
 ### 1 
