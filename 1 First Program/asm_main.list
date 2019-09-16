@@ -1,0 +1,110 @@
+     1                                  ;
+     2                                  
+     3                                  ; file: asm_main.asm
+     4                                  
+     5                                  
+     6                                  
+     7                                  %include "asm_io.inc"
+     1                              <1> 	extern  read_int, print_int, print_string
+     2                              <1> 	extern	read_char, print_char, print_nl
+     3                              <1> 	extern  sub_dump_regs, sub_dump_mem, sub_dump_math, sub_dump_stack
+     4                              <1> 
+     5                              <1> %macro 	dump_regs 1
+     6                              <1> 	push	  dword %1
+     7                              <1> 	call	  sub_dump_regs
+     8                              <1> %endmacro
+     9                              <1> 
+    10                              <1> 
+    11                              <1> ;
+    12                              <1> ; usage: dump_mem label, start-address, # paragraphs
+    13                              <1> %macro  dump_mem 3
+    14                              <1> 	push	 dword %1
+    15                              <1> 	push	 dword %2
+    16                              <1> 	push	 dword %3
+    17                              <1> 	call	 sub_dump_mem
+    18                              <1> %endmacro
+    19                              <1> 
+    20                              <1> %macro	dump_math 1
+    21                              <1> 	push	 dword %1
+    22                              <1> 	call	 sub_dump_math
+    23                              <1> %endmacro
+    24                              <1> 
+    25                              <1> %macro  dump_stack 3
+    26                              <1> 	push	 dword %3
+    27                              <1>         push     dword %2
+    28                              <1> 	push	 dword %1
+    29                              <1>         call     sub_dump_stack
+    30                              <1> %endmacro
+     8                                  
+     9                                  ;
+    10                                  
+    11                                  ; initialized data is put in the .data segment
+    12                                  
+    13                                  ;
+    14                                  
+    15                                  section .data
+    16                                  
+    17 00000000 526179204C61756768-             hello: db 'Ray Laughrey', 10
+    17 00000009 7265790A           
+    18                                  
+    19                                          helloLen: equ $-hello
+    20                                  
+    21                                          syswrite: equ 4
+    22                                  
+    23                                          stdout: equ 1
+    24                                  
+    25                                          exit: equ 1
+    26                                  
+    27                                          SUCCESS: equ 0
+    28                                  
+    29                                          kernelcall: equ 80h
+    30                                  
+    31                                  
+    32                                  
+    33                                  
+    34                                  
+    35                                  ; uninitialized data is put in the .bss segment
+    36                                  
+    37                                  ;
+    38                                  
+    39                                  segment .bss
+    40                                  
+    41                                  
+    42                                  
+    43                                  ;
+    44                                  
+    45                                  ; code is put in the .text segment
+    46                                  
+    47                                  ;
+    48                                  
+    49                                  segment .text
+    50                                  
+    51                                          global  asm_main
+    52                                  
+    53                                  asm_main:
+    54                                  
+    55 00000000 C8000000                        enter   0,0               ; setup routine
+    56                                  
+    57 00000004 60                              pusha
+    58                                  
+    59 00000005 B804000000                      mov eax,syswrite        ; 4 is the vector for the syswrite function
+    60                                  
+    61 0000000A BB01000000                      mov ebx,stdout          ; standard output, 1 is for stdout
+    62                                  
+    63 0000000F B9[00000000]                    mov ecx,hello           ; the address of the string
+    64                                  
+    65 00000014 BA0D000000                      mov edx,helloLen        ; size of the string (number of characters)
+    66                                  
+    67 00000019 CD80                            int kernelcall          ; call the interrupt to execute the syswrite function
+    68                                  
+    69                                  ; next print out result message as series of steps
+    70                                  
+    71                                  
+    72                                  
+    73 0000001B 61                              popa
+    74                                  
+    75 0000001C B800000000                      mov     eax, SUCCESS    ; return back to C
+    76                                  
+    77 00000021 C9                              leave
+    78                                  
+    79 00000022 C3                              ret
