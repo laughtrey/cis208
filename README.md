@@ -13,5 +13,9 @@
 >I think assembly will be complicated, but I'm also excited to see how much of a deeper understanding I gain of 
 >different programming exercises from learning it.
 
-### 2
+### 1.1 Arithmetic Expression
+>Simple arirtmetic expressions using the registers. It's not as easy as it looks, but I thought of each register as being it's own set of parenthesis. A small set of memory itself!
+
+### 1.2 asm_io Functions
+>Using stuff like print_char and print_int that is 'built in' to our book. We're going to make these on our own later, but for now they're convenient. 
 
