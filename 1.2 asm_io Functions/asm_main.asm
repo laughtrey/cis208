@@ -35,42 +35,42 @@ asm_main:
         pusha
 ; next print out result message as series of steps
 
-		mov		eax,[num1]
-		call	print_int
-		call	print_nl
+	mov	eax,[num1]
+	call	print_int
+	call	print_nl
 
-		mov		eax,[char1]
-		call	print_char
-		call	print_nl
+	mov	eax,[char1]
+	call	print_char
+	call	print_nl
 
-		mov 	eax,string1
-		call	print_string
-		call	print_nl
+	mov 	eax,string1
+	call	print_string
+	call	print_nl
 		
-		mov		eax,prompt1
-		call	print_string
-		call	read_int
-		mov		[input1],eax
+	mov	eax,prompt1
+	call	print_string
+	call	read_int
+	mov	[input1],eax
 
-		mov		eax,success1
-		call	print_string
-		mov		eax,[input1]
-		call	print_int
-		call	print_nl
+	mov	eax,success1
+	call	print_string
+	mov	eax,[input1]
+	call	print_int
+	call	print_nl
 
-		mov		eax,prompt2
-		call	print_string
-		call	read_char
-		call	read_char
-		mov		[input2],eax
+	mov	eax,prompt2
+	call	print_string
+	call	read_char
+	call	read_char
+	mov	[input2],eax
 
-		mov		eax,success2
-		call	print_string
-		mov		eax,[input2]
-		call	print_char
-		call	print_nl
+	mov	eax,success2
+	call	print_string
+	mov	eax,[input2]
+	call	print_char
+	call	print_nl
 
-		popa
-		mov     eax, 0            ; return back to C
-		leave
-		ret
+	popa
+	mov     eax, 0            ; return back to C
+	leave
+	ret
