@@ -19,3 +19,5 @@
 ### 1.2 asm_io Functions
 >Using stuff like print_char and print_int that is 'built in' to our book. We're going to make these on our own later, but for now they're convenient. 
 
+### 2 Control and Loops
+>This week was a little different, if-else statements in assembly are somewhat complicated and counterintuitive at first, and I don't know if I did it correctly or not 'yet'.
