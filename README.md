@@ -25,3 +25,7 @@
 ### 2.2 Control and Loops
 >More control functions, looping, while loops and if loops. To be honest, I think I messed up on the sum of odd numbers between two given points, I couldn't think of a way to do that
 >in a loop yet.
+
+### 3 Bit Operations
+>I started visuallizing shift and rotate like moving a rubiks cube around, because the one thing I can think about using these functions for is encryption or cryptology.
+>If you know the correct order to UN-shift the bits and get the correct info, you can decrypt what information you need. I need to read more on this though. 
