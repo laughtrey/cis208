@@ -1,5 +1,5 @@
 ### Arrays
-Write an assembly language function that will do the following:
+>Write an assembly language function that will do the following:
 
  - Provide a function that will take 3 parameters:
 	 - The base address of a word (16 bit) array
