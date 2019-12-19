@@ -2,7 +2,7 @@
 
 ### Textbook: PC Assembly Language Paul A. Carter, 2006
 ### Fall '19
-##### Final grade: 
+##### Final grade: A 
 
 [Continued from CIS 83](https://laughtrey.github.io/cis83/)
 
@@ -29,3 +29,13 @@
 ### 3 Bit Operations
 >I started visuallizing shift and rotate like moving a rubiks cube around, because the one thing I can think about using these functions for is encryption or cryptology.
 >If you know the correct order to UN-shift the bits and get the correct info, you can decrypt what information you need. I need to read more on this though. 
+
+### 4 Subprograms
+>I spent entirely too long trying to create a subprogram inside of main. Why would I do that? Functions exist outside of the main driver always. 
+>This is the part where you really respect compilers and what they're doing, pushing paramters to the stack is tedious and I can't imagine more than a few.
+
+### 5 Arrays
+>Arrays weren't very hard, especially if you use EDI and ESI and their built in pneumonic functions. STOS_ and LODS_ were incredibly useful. 
+
+### Final
+>It wasn't difficult at all since I spent so much time messing with arrays with the last project. I'm going to go back and see if I can do the same thing with the float and math coprocessor. 

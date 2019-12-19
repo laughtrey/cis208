@@ -34,6 +34,7 @@ asm_main:
         mov ecx,hello           ; the address of the string
         mov edx,helloLen        ; size of the string (number of characters)
         int kernelcall          ; call the interrupt to execute the syswrite function
+        call    print_int
 
 ; next print out result message as series of steps
 
