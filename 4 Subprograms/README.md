@@ -1,4 +1,4 @@
-# Subprogram project
+### Subprogram project
 Write an assembly language program that will declare and implement a function that will do the following:
 
 Determine if a number contains a particular digit.  If this function was written in C or C++ it would have a header that would look like:
